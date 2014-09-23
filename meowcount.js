@@ -13,7 +13,7 @@
   var observer = new MutationObserver(function (mutations) {
     var message = mutations[0].addedNodes[0].getElementsByTagName('p')[0].innerHTML;
     _.each(message.split(' '), function (word) {
-      if (word === 'meow') {
+      if (word.match(/meow/i)) {
         console.log(word);
         count++;
         Tinycon.setBubble(count);
